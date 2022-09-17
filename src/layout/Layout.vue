@@ -1,15 +1,18 @@
 <template>
-    <div class="layout">
-        <div class="layout-menu">
-            <ul class="layout-menu-list">
-                <router-link :to="charactersLink"> Characters </router-link>
-                <router-link :to="comicsLink"> Comics </router-link>
-                <router-link :to="storiesLink"> Stories </router-link>
-                <router-link :to="favoritesLink"> Favorites </router-link>
-
-            </ul>
+    <div class="h-screen flex flex-col">
+        <div class="flex text-white justify-between bg-slate-800 p-4 shadow-lg drop-shadow-lg">
+            <p class="text-lg font-semibold">Marvel App</p>
+            <div class="flex justify-end">
+                <ul class="space-x-4 mr-4">
+                    <router-link class="hover:text-slate-300 transition" :to="charactersLink"> Characters </router-link>
+                    <router-link class="hover:text-slate-300 transition" :to="comicsLink"> Comics </router-link>
+                    <router-link class="hover:text-slate-300 transition" :to="storiesLink"> Stories </router-link>
+                    <router-link class="hover:text-slate-300 transition" :to="favoritesLink"> Favorites </router-link>
+                    
+                </ul>
+            </div>
         </div>
-        <div class="layout-content">
+        <div class="flex m-8">
             <slot></slot>
         </div>
     </div>

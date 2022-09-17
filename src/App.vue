@@ -1,12 +1,8 @@
 <template>
-  <div>
     <Layout v-if="isWrapped">
       <router-view></router-view>
     </Layout>
-    <div v-else>
-      <router-view></router-view>
-    </div>
-  </div>
+      <router-view v-else></router-view>
 </template>
 
 <script lang="ts">
