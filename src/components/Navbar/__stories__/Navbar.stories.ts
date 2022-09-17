@@ -1,18 +1,24 @@
 import Navbar from "../Navbar.vue";
+import {menuOptions as MenuData} from "../../../data/MenuOptions.json";
 
 import { Meta, StoryFn } from "@storybook/vue3";
 
 const MetaObject: Meta = {
-    title: 'Controls/Navbar',
-    component: Navbar,
-  };
+  title: "Controls/Navbar",
+  component: Navbar,
+};
 
-const Template: StoryFn<typeof Navbar> = (args: any, { argTypes } : {argTypes:any}) => ({
+const Template: StoryFn<typeof Navbar> = (args) => ({
   components: { Navbar },
-  props: Object.keys(argTypes),
-  template: '<Navbar v-bind="$props" />',
+  setup() {
+    return { args };
+  },
+  template: '<Navbar v-bind="args" />',
 });
 
 export const Default = Template.bind({});
+Default.args = {
+  menuOptions: MenuData
+};
 
 export default MetaObject;
