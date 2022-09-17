@@ -1,5 +1,5 @@
 <template>
-    <nav class="bg-slate-800">
+    <nav class="bg-slate-800" data-testid="navbar">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="flex h-16 items-center justify-between">
                 <div class="flex items-center">
@@ -10,7 +10,9 @@
                         <div class="ml-10 flex items-baseline space-x-4">
                             <router-link v-for="menu in menuOptions" :key="menu.id"
                                 :class="menu.isSelected? 'bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium' : 'text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium cursor-pointer' "
-                                :to="menu.to">
+                                :to="menu.to"
+                                :data-testid="`menu-option-${menu.id}`"
+                                >
                                 {{menu.text}}
                             </router-link>
                         </div>
