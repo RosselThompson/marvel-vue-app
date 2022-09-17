@@ -1,7 +1,6 @@
-import Navbar from "../Navbar.vue";
-import {menuOptions as MenuData} from "../../../data/MenuOptions.json";
-
 import { Meta, StoryFn } from "@storybook/vue3";
+import {menuOptionsData } from "@/data/MenuOptions";
+import Navbar from "../Navbar.vue";
 
 const MetaObject: Meta = {
   title: "Controls/Navbar",
@@ -18,7 +17,7 @@ const Template: StoryFn<typeof Navbar> = (args) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-  menuOptions: MenuData
+  menuOptions: menuOptionsData
 };
 
 export default MetaObject;

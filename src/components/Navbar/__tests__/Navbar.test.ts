@@ -1,11 +1,11 @@
 import { mount } from '@vue/test-utils'
-import {menuOptions} from '@/data/MenuOptions.json';
+import {menuOptionsData} from '@/data/MenuOptions';
 import { router } from '@/router/Router';
 import Navbar from '@/components/Navbar/Navbar.vue';
 
 const wrapper = mount(Navbar,{
     props:{
-        menuOptions: menuOptions
+        menuOptions: menuOptionsData
     },
     global:{
         plugins: [router]
@@ -20,7 +20,7 @@ describe('Test navbar component', () => {
      })
 
      test('should render component with menu options', () => { 
-        menuOptions.forEach(menu => {
+        menuOptionsData.forEach(menu => {
             const option = wrapper.find(`[data-testid="menu-option-${menu.id}"]`);
             expect(option.text()).toBe(menu.text);
             expect(option.attributes('href')).toBe(menu.to);
@@ -28,7 +28,7 @@ describe('Test navbar component', () => {
      })
 
      test('should render component with menu options is selected', () => { 
-        const selectedMenu = menuOptions.find(menu => menu.isSelected);
+        const selectedMenu = menuOptionsData.find(menu => menu.isSelected);
         const option = wrapper.find(`[data-testid="menu-option-${selectedMenu?.id}"]`);
         expect(option.classes('bg-gray-900')).toBe(true);
      })

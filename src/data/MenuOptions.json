@@ -1,8 +1,0 @@
-{
-    "menuOptions": [
-        { "id": 1, "isSelected":true,  "text": "Characters","to": "/characters","routeName": "characters"},
-        { "id": 2, "isSelected":false, "text": "Comics",    "to": "/comics",    "routeName": "comics"},
-        { "id": 3, "isSelected":false, "text": "Stories",   "to": "/stories",   "routeName": "stories"},
-        { "id": 4, "isSelected":false, "text": "Favorites", "to": "/favorites", "routeName": "favorites"}
-    ]
-}
