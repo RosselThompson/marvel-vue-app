@@ -1,13 +1,7 @@
 <template>
     <div class="h-screen flex flex-col">
         <navbar :menuOptions="menuOptions" />
-        <div class="z-overlap absolute top-16 p-4 w-full h-full lg:p-0 lg:justify-around lg:flex">
-            <div class="d-none lg:flex"></div>
-            <div class="lg:flex lg:justify-center lg:w-3/4 xl:w-1/2">
-                <slot></slot>
-            </div>
-            <div class="d-none lg:flex"></div>
-        </div>
+        <slot></slot>
     </div>
 </template>
 
