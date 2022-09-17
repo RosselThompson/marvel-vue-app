@@ -1,5 +1,5 @@
 <template>
-    <button class="p-2 rounded-full hover:bg-gray-100" data-testid="icon-button" v-on:click="onClick" >
+    <button class="p-2 rounded-full hover:bg-gray-100" data-testid="icon-button" @click="onClick" >
         <div class="flex align-center justify-center">
             <slot name="icon"></slot>
         </div>
