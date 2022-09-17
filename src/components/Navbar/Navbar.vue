@@ -6,7 +6,7 @@
                     <div class="flex-shrink-0">
                         <p class="text-white text-lg font-semibold">Marvel App</p>
                     </div>
-                    <div class="hidden md:block">
+                    <div class="hidden lg:block">
                         <div class="ml-10 flex items-baseline space-x-4">
                             <router-link v-for="menu in menuOptions" :key="menu.id"
                                 :class="menu.isSelected? 'bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium' : 'text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium cursor-pointer' "
@@ -18,7 +18,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="-mr-2 flex md:hidden">
+                <div class="-mr-2 flex lg:hidden">
                     <button type="button"
                         class="inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                         v-on:click="isMenuOpen = !isMenuOpen">
@@ -32,7 +32,7 @@
             </div>
         </div>
 
-        <div v-if="isMenuOpen" id="mobile-menu" class="md:hidden">
+        <div v-if="isMenuOpen" id="mobile-menu" class="lg:hidden">
             <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
                 <router-link v-for="menu in menuOptions" :key="menu.id"
                     :class="menu.isSelected ? 'bg-gray-900 block text-white px-3 py-2 rounded-md text-sm font-medium' : 'text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-sm font-medium cursor-pointer' "

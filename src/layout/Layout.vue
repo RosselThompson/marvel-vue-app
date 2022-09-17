@@ -1,8 +1,12 @@
 <template>
     <div class="h-screen flex flex-col">
-       <navbar :menuOptions="menuOptions" />
-        <div class="flex m-8">
-            <slot></slot>
+        <navbar :menuOptions="menuOptions" />
+        <div style="z-index: -9999;" class="absolute top-16 p-4 w-full h-full lg:p-0 lg:justify-around lg:flex">
+            <div class="d-none lg:flex"></div>
+            <div class="lg:flex lg:justify-center lg:w-3/4 xl:w-1/2">
+                <slot></slot>
+            </div>
+            <div class="d-none lg:flex"></div>
         </div>
     </div>
 </template>
@@ -15,9 +19,9 @@ import Navbar from '@/components/Navbar/Navbar.vue';
 export default defineComponent({
     name: "m-layout",
     components: { Navbar },
-    computed:{
-        menuOptions(){
-            return menuOptionsData.map(menu => ({...menu, isSelected: this.$route.name === menu.routeName}))
+    computed: {
+        menuOptions() {
+            return menuOptionsData.map(menu => ({ ...menu, isSelected: this.$route.name === menu.routeName }))
         }
     }
 })
